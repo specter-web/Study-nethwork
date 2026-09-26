@@ -4,67 +4,197 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>STUDY NETHWORK // Personal Learning System</title>
+  <title>STUDY NETHWORK // NEXUS</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="app">
+  <!-- ================= LOGIN ================= -->
+
+  <div id="loginScreen" class="login-screen">
+
+    <div class="cyber-grid"></div>
+    <div class="scanline"></div>
+
+    <div class="login-box">
+
+      <div class="system-badge">
+        ● NEXUS SYSTEM ONLINE
+      </div>
+
+      <div class="logo-core">
+        SN
+      </div>
+
+      <h1>STUDY <span>NETHWORK</span></h1>
+
+      <p class="version">
+        PERSONAL LEARNING NEXUS // V2.0
+      </p>
+
+      <div class="login-divider"></div>
+
+      <label>IDENTITY</label>
+
+      <input
+        id="usernameInput"
+        type="text"
+        placeholder="Enter username"
+        maxlength="20"
+      >
+
+      <label>ACCESS CODE</label>
+
+      <div class="password-row">
+
+        <input
+          id="passwordInput"
+          type="password"
+          placeholder="Enter access code"
+          maxlength="30"
+        >
+
+        <button onclick="togglePassword()" id="showPassword">
+          SHOW
+        </button>
+
+      </div>
+
+      <button class="enter-button" onclick="login()">
+        INITIALIZE NEXUS →
+      </button>
+
+      <div id="loginMessage" class="login-message"></div>
+
+      <div class="login-info">
+        DEMO LOCAL SESSION<br>
+        NO REAL PASSWORD REQUIRED
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= MAIN APP ================= -->
+
+  <div id="mainApp" class="app hidden">
 
     <!-- HEADER -->
+
     <header class="header">
+
       <div>
+
         <div class="brand">
           STUDY <span>NETHWORK</span>
         </div>
+
         <div class="subtitle">
-          PERSONAL LEARNING PLATFORM
+          PERSONAL LEARNING NEXUS // V2.0
         </div>
+
       </div>
 
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <div class="header-actions">
+
+        <div id="userDisplay" class="user-display">
+          USER
+        </div>
+
+        <button class="logout-btn" onclick="logout()">
+          LOGOUT
+        </button>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+          ☰
+        </button>
+
+      </div>
+
     </header>
 
-    <!-- NAVIGATION -->
+
+    <!-- NAV -->
+
     <nav id="navMenu" class="nav-menu">
+
       <a href="#dashboard">Dashboard</a>
-      <a href="#mission">Mission</a>
+      <a href="#missions">Missions</a>
       <a href="#focus">Focus</a>
       <a href="#subjects">Subjects</a>
+      <a href="#achievements">Achievements</a>
       <a href="#terminal">Terminal</a>
+
     </nav>
 
-    <!-- DASHBOARD -->
+
+    <!-- ================= DASHBOARD ================= -->
+
     <section id="dashboard" class="hero">
 
       <div class="hero-badge">
-        ● SYSTEM ONLINE
+        ● NEXUS ONLINE
       </div>
 
       <h1>
         Build knowledge.<br>
-        <span>One session at a time.</span>
+        <span>Become unstoppable.</span>
       </h1>
 
       <p>
         Your personal command center for learning,
-        tracking progress and staying focused.
+        focus and progress.
       </p>
 
-      <!-- XP CARD -->
+
+      <!-- PROFILE -->
+
+      <div class="profile-card">
+
+        <div class="profile-avatar" id="profileAvatar">
+          S
+        </div>
+
+        <div class="profile-info">
+
+          <small>ACTIVE LEARNER</small>
+
+          <h2 id="profileName">
+            STUDENT
+          </h2>
+
+          <span id="profileLevel">
+            LEVEL 1
+          </span>
+
+        </div>
+
+        <div class="profile-xp">
+          <strong id="xp">0</strong>
+          <small>XP</small>
+        </div>
+
+      </div>
+
+
+      <!-- XP -->
+
       <div class="level-card">
 
         <div class="level-top">
 
           <div>
-            <small>LEARNING LEVEL</small>
-            <h2 id="level">LEVEL 1</h2>
+            <small>NEXUS LEVEL</small>
+            <h2 id="level">
+              LEVEL 1
+            </h2>
           </div>
 
           <div class="xp-number">
-            <span id="xp">0</span> XP
+            <span id="xpTop">0</span> XP
           </div>
 
         </div>
@@ -81,44 +211,59 @@
 
     </section>
 
-    <!-- STATS -->
+
+    <!-- ================= STATS ================= -->
+
     <section class="stats">
 
       <div class="stat-card">
-        <div class="stat-icon">🔥</div>
+        <span class="stat-icon">🔥</span>
         <strong id="streak">1</strong>
-        <span>Day Streak</span>
+        <small>DAY STREAK</small>
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">✓</div>
+        <span class="stat-icon">⚡</span>
         <strong id="tasksDone">0</strong>
-        <span>Tasks Done</span>
+        <small>TASKS DONE</small>
       </div>
 
       <div class="stat-card">
-        <div class="stat-icon">⏱</div>
+        <span class="stat-icon">⏱</span>
         <strong id="focusMinutes">0</strong>
-        <span>Focus Min</span>
+        <small>FOCUS MIN</small>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-icon">🏆</span>
+        <strong id="achievementCount">0</strong>
+        <small>ACHIEVEMENTS</small>
       </div>
 
     </section>
 
-    <!-- DAILY MISSION -->
-    <section id="mission" class="section">
+
+    <!-- ================= MISSIONS ================= -->
+
+    <section id="missions" class="section">
 
       <div class="section-title">
 
         <div>
           <small>DAILY PROTOCOL</small>
-          <h2>Today's Learning Mission</h2>
+          <h2>Mission Control</h2>
         </div>
 
-        <span class="status">ACTIVE</span>
+        <span class="status">
+          ACTIVE
+        </span>
 
       </div>
+
 
       <div class="mission-list">
 
         <label class="mission">
-          <input type="checkbox" onchange="
+
+          <input
+           
