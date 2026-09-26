@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>STUDY NETHWORK // Personal Learning System</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div>
+        <div class="brand">
+          STUDY <span>NETHWORK</span>
+        </div>
+        <div class="subtitle">
+          PERSONAL LEARNING PLATFORM
+        </div>
+      </div>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav id="navMenu" class="nav-menu">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#mission">Mission</a>
+      <a href="#focus">Focus</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#terminal">Terminal</a>
+    </nav>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="hero">
+
+      <div class="hero-badge">
+        ● SYSTEM ONLINE
+      </div>
+
+      <h1>
+        Build knowledge.<br>
+        <span>One session at a time.</span>
+      </h1>
+
+      <p>
+        Your personal command center for learning,
+        tracking progress and staying focused.
+      </p>
+
+      <!-- XP CARD -->
+      <div class="level-card">
+
+        <div class="level-top">
+
+          <div>
+            <small>LEARNING LEVEL</small>
+            <h2 id="level">LEVEL 1</h2>
+          </div>
+
+          <div class="xp-number">
+            <span id="xp">0</span> XP
+          </div>
+
+        </div>
+
+        <div class="progress">
+          <div id="xpBar"></div>
+        </div>
+
+        <small id="xpText">
+          0 / 100 XP
+        </small>
+
+      </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <strong id="streak">1</strong>
+        <span>Day Streak</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">✓</div>
+        <strong id="tasksDone">0</strong>
+        <span>Tasks Done</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">⏱</div>
+        <strong id="focusMinutes">0</strong>
+        <span>Focus Min</span>
+      </div>
+
+    </section>
+
+    <!-- DAILY MISSION -->
+    <section id="mission" class="section">
+
+      <div class="section-title">
+
+        <div>
+          <small>DAILY PROTOCOL</small>
+          <h2>Today's Learning Mission</h2>
+        </div>
+
+        <span class="status">ACTIVE</span>
+
+      </div>
+
+      <div class="mission-list">
+
+        <label class="mission">
+          <input type="checkbox" onchange="
